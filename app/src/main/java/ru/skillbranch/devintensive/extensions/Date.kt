@@ -41,6 +41,7 @@ fun Date.humanizeDiff(date: Date = Date()): String {
         absDiff / HOUR <= 26 -> if (isPast) "день назад" else "через день"
         absDiff / DAY <= 360 -> if (isPast) "${TimeUnits.DAY.plural((absDiff / DAY).toInt())} назад"
         else "через ${TimeUnits.DAY.plural((absDiff / DAY).toInt())}"
+
         else -> if (isPast) "более года назад" else "более чем через год"
     }
 }
